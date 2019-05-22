@@ -1,8 +1,36 @@
 {
-    "fairy":{
-        "efectivo":[],
-        "ineficas":[],
-        "neutro":[],
-        "inmune":[]
-    }
+   "tipos":{
+               "fairy":{
+                     "efectivo":["fighting","dragon","dark"],
+                     "ineficas":["poison","steel"],
+                     "inmune":["dragon"]
+                        },
+               "steel":{
+                     "efectivo":["ice","rock","fairy"],
+                     "ineficas":["fire","fighting","ground"],
+                     "inmune":["poison"]
+                      },
+               "dark":{
+                     "efectivo":["psychic","ghost"],
+                     "ineficas":["fighting","bug","fairy"],
+                     "inmune":["psychic"]
+                     },
+               "dragon":{
+                     "efectivo":["dragon"],
+                     "ineficas":["ice","fairy"],
+                     "inmune":[]
+                     },
+               "ghost":{
+                     "efectivo":["ghost","psychic"],
+                     "ineficas":["dark"],
+                     "inmune":["fighting","normal"]
+                     },
+               "tipo":{
+                      "efectivo":[],
+                      "ineficas":[],
+                      "inmune":[]
+                      }
+           }
 }
+
+

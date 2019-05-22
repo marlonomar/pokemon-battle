@@ -142,12 +142,7 @@ img.tipo_secundario {
     width: 100%;
     height:100px;
     background:white;
-    border-style: dotted; 
-  	border-width: 1px; 
-  	border-color: 660033; 
-  	background-color: cc3366; 
-  	font-family: verdana, arial; 
-  	font-size: 10pt;
+    border: 4px solid #CDD594;
     display: none;
     text-align: center;
     padding: 20px;

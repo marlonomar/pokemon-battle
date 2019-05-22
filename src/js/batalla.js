@@ -8,7 +8,6 @@ $(document).ready(function(){
             fondo.css({"background-size":"cover"})
             const player1 = JSON.parse(localStorage.getItem('player-1'));
             const player2 = JSON.parse(localStorage.getItem('player-2'));
-
             const caja = $(".comentarios");
             
         
