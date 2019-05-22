@@ -10,5 +10,22 @@
   "scripts": {
     "build": "webpack",
     "build-babel": "babel src -d output -w"
-  }
+  },
+  "name": "pokedex",
+  "version": "1.2.1",
+  "description": "pokemon battle enfrenta 2 pokemon en una batalla",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.17.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marlonomar/Pokemon-Battle.git"
+  },
+  "author": "Marlon Guerrero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marlonomar/Pokemon-Battle/issues"
+  },
+  "homepage": "https://github.com/marlonomar/Pokemon-Battle#readme"
 }
