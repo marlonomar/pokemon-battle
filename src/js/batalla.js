@@ -129,7 +129,7 @@ $(document).ready(function(){
                         $("#atacar").click(function(){
                         caja.append(`el combate comienza entre ${player1.nombre} contra ${player2.nombre}`);
                         dano = (ataque(player1,player2));
-                        combate(player1,player2,'player-1',ataque);
+                        combate(player2,player1,'player-1',ataque);
                     })
                     
                 }
@@ -138,7 +138,7 @@ $(document).ready(function(){
                         $("#atacar").click(function(){
                         caja.append(`el combate comienza entre ${player1.nombre} contra ${player2.nombre}`);
                         dano = (ataque_especial(player1,player2));
-                        combate(player1,player2,'player-1',ataque_especial);
+                        combate(player2,player1,'player-1',ataque_especial);
                 })
                 }
               }
