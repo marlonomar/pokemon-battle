@@ -1,0 +1,183 @@
+/*-global----------------------------------------*/
+*{
+    font-weight: bold;
+}
+body{
+    background: url('../images/fondo.jpg');
+}
+/*-fuentes---------------------------------------*/
+@font-face {
+    font-family: "pokemon";
+    src: url("../pokemon/Pokemon\ Solid.ttf");
+  }
+@font-face {
+    font-family: "player";
+    src: url("../players/Players-Bold.ttf");
+  }
+/*-buscador--------------------------------------*/
+input[type="text"]{
+    display: inline;
+    text-align: center;
+    width:200px;
+}
+div.pokeball{
+    display: inline;
+}
+.pokeball img{
+    display: inline-block;
+    border-radius: 50%;
+    width: 30px;
+    cursor: pointer; 
+}
+.pokeball img:hover{
+    width: 25px;
+    box-shadow: 0px 0px 15px  rgba(0,0,0,.35);
+}
+/*-carta-----------------------------------------*/
+.carta{
+    display: flex;
+    margin-top: 20px;
+    width: 300px;
+    height:400px;
+    background:yellow;
+    display: block;
+    padding:12px;
+}
+div.fondo{
+    box-shadow: 0px 0px 15px  rgba(0,0,0,.35);
+    width: 278px;
+    height:378px;
+    background:#c6c6c6;
+    border-radius:10px;
+    padding: 7px;
+   
+}
+ header h1{
+    font-family: "pokemon";
+    font-size: 63px;
+    color: yellow;
+    margin-bottom: 30px;
+    text-shadow: 5px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+}
+div.fondo h1 {
+    display: inline;
+    position: relative;
+    left: 16px;
+    font-weight: bold;
+   
+}
+h2{
+    font-family: "player";
+}
+div.ambiente {
+    border-radius:5px;
+    box-shadow: 0px 0px 15px  rgba(0,0,0,.35);
+    width: 265px;
+    height:162px;
+    background:white;
+    background-size: cover;
+    margin-top:8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+div.stats{
+    border-radius:5px;
+    width:260px;
+    height:156px;
+    background: rgba(255, 255, 255, 0.7)
+}
+div.fondo h1{
+    font-size:20px;
+    text-align: center !important;
+}
+p.elementos{
+   
+    display: inline;
+
+}
+div.stats ul li {
+    font-size: 15px;
+}
+div.stats{
+    margin-top: 9px;
+}
+div.stats ul {
+    text-align: initial;
+}
+img.tipo {
+    
+
+    width:20px;
+}
+.tipos{
+    display: inline;
+    position: relative;
+    left:31px;
+}
+img.tipo_secundario {
+    margin-left: 3px;
+
+}
+/*-boton de batalla-------------------------------*/
+.boton{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.boton button {
+    width: 167px;
+    height: 79px;
+    font-size: 38px;
+    font-weight: bold;
+    border: 6px solid orange;
+    color: white;
+    position: relative;
+    top: 135px;
+    left: 41px;
+}
+/*-caja de comentarios----------------------------*/
+.comentarios{
+    width: 100%;
+    height:100px;
+    background:white;
+    border-style: dotted; 
+  	border-width: 1px; 
+  	border-color: 660033; 
+  	background-color: cc3366; 
+  	font-family: verdana, arial; 
+  	font-size: 10pt;
+    display: none;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    left: -17px;
+}
+/*-barra de vida----------------------------------*/
+.vida{
+    height: 19px;
+    width: 69px;
+    border: 1px solid black;
+    border-radius: 3px;
+    display: inline-block;
+}
+.vida > div {
+    width: 100%;
+    height:100%;
+    background:#23FA04;
+    transition: all 3s;
+    -webkit-transition: all 3s;
+    -moz-transition: all 3s;
+    -ms-transition: all 3s;
+    -o-transition: all 3s;
+}
+.vida >div > p{
+    text-align: center;
+    font-size: 10px;
+}
+/*-boton atacar------------------------------------*/
+#atacar{
+    position: relative;
+    top: -39px;
+    left: 178px;
+}

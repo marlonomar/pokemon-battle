@@ -1,0 +1,39 @@
+div.container{
+    width:90%;
+    max-width:1000px;
+    height: auto;
+    display: grid;
+    margin: auto;
+    grid-template-columns: 1fr 300px 1fr;
+    grid-template-rows: repeat(auto,1fr);
+    grid-template-areas: "header   header header"
+                         "player-1 button player-2"
+                         "footer   footer footer";
+}
+
+.cabezera{
+    text-align: center;
+    grid-area: header;
+}
+
+.player-1{
+    grid-area: player-1;
+}
+
+.player-2{
+    grid-area: player-2;
+}
+
+.boton{
+    grid-area: button;
+    display:grid;
+    grid-template-areas: "boton"
+                        "comentarios";
+}
+
+.btn-batalla{
+    grid-area: boton;
+}
+.comentarios{
+    grid-area: comentarios;
+}

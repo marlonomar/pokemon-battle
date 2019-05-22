@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Pokemon Battle</title>
+        <link rel="shortcut icon" type="image/png" href="./images/poke.ico"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./css/css.css">
+        <link rel="stylesheet" href="./css/grid.css">
+        <link rel="stylesheet" href="./js/jquery-ui\jquery-ui.structure.min.css">
+        <link rel="stylesheet" href="./js/jquery-ui\jquery-ui.theme.min.css">
+        <script src="./js/jquery.min.js"></script>
+        <script src="../output/js/js.js"></script>
+        <script src="../output/js/batalla.js"></script>
+        <script src="./js/jquery-ui\jquery-ui.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+                <div class="cabezera">
+                    <header>
+                        <h1>Pokemon Battle</h1>
+                    </header>
+                </div>
+                <div class="player-1">
+                    <h2>PLAYER 1</h2>
+
+                        <input type="text" placeholder="pokemon" class="form-control" id="player-1">
+
+                        <div class="pokeball">
+                            <img src="./images/pokeball.png">
+                        </div>
+                    
+                        <div class="carta">
+                            <div class="fondo">
+                                
+                                <div class="tipos"></div>
+
+                                <div class="ambiente"></div>
+
+                                <div class="stats"><ul></ul></div>
+
+                            </div>
+                        </div>
+                </div>
+                <div class="boton">
+                    <div class="btn-batalla">
+                        <button class="btn btn-warning">Battle</button>
+                    </div>
+                    <div class="comentarios">
+                        <div class="mensaje">
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="player-2">
+
+                        <h2>PLAYER 2</h2>
+
+                        <input type="text" placeholder="pokemon" class="form-control" id="player-2"> 
+
+                        <div class="pokeball">
+                            <img src="./images/pokeball.png">
+                        </div>
+                    
+                        <div class="carta">
+                            <div class="fondo">
+
+                                <div class="tipos"></div>
+
+                                <div class="ambiente"></div>
+
+                                <div class="stats"><ul></ul></div>
+
+                            </div>
+                        </div>
+
+                </div>
+        </div>
+    </body>
+</html>
