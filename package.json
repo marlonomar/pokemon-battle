@@ -7,14 +7,14 @@
     "webpack": "^4.32.0",
     "webpack-cli": "^3.3.2"
   },
-  "scripts": {
-    "build": "webpack",
-    "build-babel": "babel src -d output -w"
-  },
   "name": "pokedex",
   "version": "1.2.1",
   "description": "pokemon battle enfrenta 2 pokemon en una batalla",
   "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
     "express": "^4.17.0"
   },
