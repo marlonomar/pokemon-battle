@@ -3,12 +3,16 @@
 $(document).ready(function () {
   var battle = function battle() {
     $("button").on('click', function () {
+      var fondo = $("body");
+      fondo.css({
+        "background": 'url("./images/fondoBatalla.png")'
+      });
+      fondo.css({
+        "background-size": "cover"
+      });
       var player1 = JSON.parse(localStorage.getItem('player-1'));
       var player2 = JSON.parse(localStorage.getItem('player-2'));
       var caja = $(".comentarios");
-      caja.css({
-        "display": "block"
-      });
 
       function batalla(player1, player2) {
         var dano;
@@ -67,6 +71,9 @@ $(document).ready(function () {
 
 
         function combate(atacante, defensor, player, especialidad) {
+          caja.css({
+            "display": "block"
+          });
           hp = impacto(defensor, dano);
           var tipoAtacante = especialidad;
 
