@@ -289,7 +289,7 @@ $(document).ready(function(){
                               caja.append(`${atacante.nombre} a ganado!!!`);
                               localStorage.clear();
                         }
-                        }, 20000);
+                        }, 17000);
                         }
                   /** ----condiciones del combate---*/
                   if(player1.velocidad > player2.velocidad){
