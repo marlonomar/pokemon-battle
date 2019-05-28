@@ -50,6 +50,7 @@
                     defensa : pokemon.stats[3].base_stat,
                     ataque : pokemon.stats[4].base_stat,
                     hp : pokemon.stats[5].base_stat,
+                    tipo: pokemon.types[0].type.name
                     
                 }
 

@@ -1,8 +1,7 @@
 $(document).ready(function(){
     const battle = ()=>{
-        
-
         $("button").on('click',function(){
+
             let fondo = $("body");
             fondo.css({"background":'url("./images/fondoBatalla.png")'})
             fondo.css({"background-size":"cover"})
@@ -15,7 +14,192 @@ $(document).ready(function(){
             var dano
             var hp
            /**--------funciones para el juego------------- */
+            
+            let tipos = [
+     
+      {
+            "tipo":"fairy",
+            "efectividad":{
+                  "efectivo":["fighting","dragon","dark"],
+                  "ineficas":["poison","steel"],
+                  "inmune":[]
+            }
+      },
+      {
+            "tipo":"steel",
+            "efectividad":{
+                  "efectivo":["ice","rock","fairy"],
+                  "ineficas":["fire","fighting","ground"],
+                  "inmune":[] 
+            }
+      },
+      {
+            "tipo":"dark",
+            "efectividad":{
+                  "efectivo":["psychic","ghost"],
+                  "ineficas":["fighting","bug","fairy"],
+                  "inmune":[]
+            }
+      },
+      {
+            "tipo":"dragon",
+            "efectividad":{
+                  "efectivo":["dragon"],
+                  "ineficas":["ice","fairy"],
+                  "inmune":["fairy"]
+            }
+      },
+      {
+            "tipo":"ghost",
+            "efectividad":{
+                  "efectivo":["ghost","psychic"],
+                  "ineficas":["dark"],
+                  "inmune":["fighting","normal"]
+            }
+      },
+      {
+            "tipo":"rock",
+            "efectividad":{
+                  "efectivo":["fire","ice","flying","bug"],
+                  "ineficas":["water","grass","fighting","ground","steel"],
+                  "inmune":[]
+            }
+      },
+      {
+            "tipo":"bug",
+            "efectividad":{
+                  "efectivo":["grass","psychic","dark"],
+                  "ineficas":["fire","flying","rock"],
+                  "inmune":[]
+            }
+      },
+      {
+            "tipo":"psychic",
+            "efectividad":{
+                  "efectivo":["fighting","poison"],
+                  "ineficas":["bug","ghost","dark"],
+                  "inmune":["dark"]
+            }
+      },
+      {
+            "tipo":"flying",
+            "efectividad":{
+                  "efectivo":["grass","fighting","bug"],
+                  "ineficas":["electric","ice","rock"],
+                  "inmune":[]
+            }
+      },
+      {
+            "tipo":"ground",
+            "efectividad":{
+                  "efectivo":["fire","electric","poison","rock","steel"],
+                  "ineficas":["water","grass","ice"],
+                  "inmune":["flying"]
+            }
+      },
+      {
+            "tipo":"poison",
+            "efectividad":{
+                  "efectivo":["grass","fairy"],
+                  "ineficas":["ground","psychic"],
+                  "inmune":["poison","steel"]
+            }
+      },
+      {
+            "tipo":"fighting",
+            "efectividad":{
+                  "efectivo":["normal","ice","rock","dark","steel"],
+                  "ineficas":["flying","psychic","fairy"],
+                  "inmune":["ghost"]
+            }
+      },
+      {
+            "tipo":"ice",
+            "efectividad":{
+                  "efectivo":["grass","ground","flying","dragon"],
+                  "ineficas":["fire","fighting","rock","steel"],
+                  "inmune":[]
+            }
+      },
+      {
+            "tipo":"grass",
+            "efectividad":{
+                  "efectivo":["water","ground","rock"],
+                  "ineficas":["fire","ice","poison","flying","bug"],
+                  "inmune":[]
+            }
+      },
+      {
+            "tipo":"electric",
+            "efectividad":{
+                  "efectivo":["water","flying"],
+                  "ineficas":[],
+                  "inmune":["ground"]
+            }     
+      },
+      {
+            "tipo":"water",
+            "efectividad":{
+                  "efectivo":["fire","ground","rock"],
+                  "ineficas":["electric","grass"],
+                  "inmune":[]
+            }
+  
+      },
+      {
+            "tipo":"fire",
+            "efectividad":{
+                  "efectivo":["grass","ice","bug","steel"],
+                  "ineficas":["water","ground","rock"],
+                  "inmune":[]
+            }
+      },
+      {
+            "tipo":"normal",
+            "efectividad":{
+                  "efectivo":[],
+                  "ineficas":["fighting"],
+                  "inmune":["ghost"]
+            }
+      }
+  ]
+  
+            const efetividadTipos =(ataca,defiende)=>{
+
+      function getType (tipo){
+        
+          return tipos.find(search=> search.tipo == tipo)
+        }
+        
+      function efectividad (atacante,defensor){
+        
+        if( atacante.efectividad.efectivo.find(search=> search == defensor.tipo)){
+              return "efectivo" 
+          }
+          
+        if( atacante.efectividad.inmune.find(search=> search == defensor.tipo)){
+            return "inmune"
+        }
+        
+        if( atacante.efectividad.ineficas.find(search=> search == defensor.tipo)){
+            return "ineficas"
+        }
+        else{
+            return "neutral" 
+        } 
+        }
+      
+      let type = getType(ataca.tipo)
+        
+      let efetividad_ataque = efectividad(type,defiende)
+      
+      return efetividad_ataque
+                
+            }
+      
             const ataque =(defensor,atacante)=>{
+                   let efectividad = efetividadTipos(atacante,defensor)
+                   console.log(efectividad)     
                     if(atacante.ataque < defensor.defensa){
                         dano = -1;
                     }else{
@@ -26,6 +210,8 @@ $(document).ready(function(){
             }
             
             const ataque_especial =(defensor,atacante)=>{
+                 let efectividad = efetividadTipos(atacante,defensor)
+                 console.log(efectividad) 
                 if(atacante.ataque_especial < defensor.defensa_especial){
                     dano = -1;
                 }else{
