@@ -217,8 +217,11 @@ $(document).ready(function(){
                               default:
                                     break;
                         }
-                        console.log(dano)
-                        return (parseInt(dano) * parseInt(-1));
+                        let danoTotal = (parseInt(dano) * parseInt(-1));
+                        if(danoTotal < 1){
+                              danoTotal = 1
+                        }
+                        return danoTotal
                     
             }
             
@@ -241,8 +244,11 @@ $(document).ready(function(){
                         default:
                               break;
                   }
-                  console.log(dano)
-                return (parseInt(dano) * parseInt(-1));
+                  let danoTotal = (parseInt(dano) * parseInt(-1));
+                  if(danoTotal < 1){
+                        danoTotal = 1
+                  }
+                  return danoTotal
                 
             }
             
@@ -254,7 +260,7 @@ $(document).ready(function(){
             const bajar_ps=(player,defensor)=>{
                 let ps = (dano /defensor.hp ) * 100 ;
                 let vida = 100 - ps;
-                console.log(ps)
+           
                 $(`body > div > div.${player} > div.carta > div > div.vida > div`).css({"width":`${vida}%`});
                 if( vida > 20 && vida <= 50){
                     $(`body > div > div.${player} > div.carta > div > div.vida > div`).css({"background":"yellow"});
@@ -275,7 +281,6 @@ $(document).ready(function(){
                 var tipoAtacante = especialidad;
                 let efectividad = efetividadTipos(atacante,defensor)
                 var potencia;
-                console.log(tipoAtacante)
                 switch (efectividad) {
                   case "efectivo":
                         potencia_especial = parseInt(atacante.ataque_especial * 1.5);
