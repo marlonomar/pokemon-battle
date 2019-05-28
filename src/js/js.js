@@ -8,7 +8,8 @@
         
             const click=(player)=>{
                 $(`.${player} div.pokeball`).on('click',function(){
-                    const nombre = $(`#${player}`).val();
+                    let text = $(`#${player}`).val();
+                    let nombre = text.toLowerCase();
                     call_ajax(nombre,pokemons);
                 });
             }
