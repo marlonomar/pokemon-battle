@@ -199,25 +199,50 @@ $(document).ready(function(){
       
             const ataque =(defensor,atacante)=>{
                    let efectividad = efetividadTipos(atacante,defensor)
-                   console.log(efectividad)     
-                    if(atacante.ataque < defensor.defensa){
-                        dano = -1;
-                    }else{
-                        dano = (parseInt(defensor.defensa) - parseInt(atacante.ataque));
-                    }
+                      
+                        switch (efectividad) {
+                              case "efectivo":
+                                    dano = (parseInt(defensor.defensa) - parseInt(atacante.ataque * 1.5));
+                                    break;
+                              case "ineficas":
+                                    dano = (parseInt(defensor.defensa) - parseInt(atacante.ataque / 1.2));
+                                    break;
+                              case "neutral":
+                                    dano = (parseInt(defensor.defensa) - parseInt(atacante.ataque));
+                                    break;
+                              case "inmune":
+                                    dano = 0;
+                                    break;
+                        
+                              default:
+                                    break;
+                        }
+                        console.log(dano)
                         return (parseInt(dano) * parseInt(-1));
                     
             }
             
             const ataque_especial =(defensor,atacante)=>{
                  let efectividad = efetividadTipos(atacante,defensor)
-                 console.log(efectividad) 
-                if(atacante.ataque_especial < defensor.defensa_especial){
-                    dano = -1;
-                }else{
-                    dano = (parseInt(defensor.defensa_especial) - parseInt(atacante.ataque_especial));
-                }
-                    return (parseInt(dano) * parseInt(-1));
+                  switch (efectividad) {
+                        case "efectivo":
+                              dano = (parseInt(defensor.defensa_especial) - parseInt(atacante.ataque_especial * 1.5));
+                              break;
+                        case "ineficas":
+                              dano = (parseInt(defensor.defensa_especial) - parseInt(atacante.ataque_especial / 1.2));
+                              break;
+                        case "neutral":
+                              dano = (parseInt(defensor.defensa_especial) - parseInt(atacante.ataque_especial));
+                              break;
+                        case "inmune":
+                              dano = 0;
+                              break;
+                  
+                        default:
+                              break;
+                  }
+                  console.log(dano)
+                return (parseInt(dano) * parseInt(-1));
                 
             }
             
@@ -248,6 +273,45 @@ $(document).ready(function(){
                 caja.css({"display":"block"});
                 hp = impacto(defensor,dano);
                 var tipoAtacante = especialidad;
+                let efectividad = efetividadTipos(atacante,defensor)
+                var potencia;
+                console.log(tipoAtacante)
+                switch (efectividad) {
+                  case "efectivo":
+                        potencia_especial = parseInt(atacante.ataque_especial * 1.5);
+                        break;
+                  case "ineficas":
+                        potencia_especial =parseInt(atacante.ataque_especial / 1.2);
+                        break;
+                  case "neutral":
+                        potencia_especial =parseInt(atacante.ataque_especial);
+                        break;
+                  case "inmune":
+                        potencia_especial = 0;
+                        break;
+            
+                  default:
+                        break;
+                  }
+
+                  switch (efectividad) {
+                        case "efectivo":
+                              potencia = parseInt(atacante.ataque * 1.5);
+                              break;
+                        case "ineficas":
+                              potencia =parseInt(atacante.ataque / 1.2);
+                              break;
+                        case "neutral":
+                              potencia =parseInt(atacante.ataque);
+                              break;
+                        case "inmune":
+                              potencia = 0;
+                              break;
+                  
+                        default:
+                              break;
+                        }
+
                 if(hp < 0){
                     hp=0;
                 }
@@ -255,9 +319,9 @@ $(document).ready(function(){
                 setTimeout(() => {
                     caja.empty();
                     if(tipoAtacante == ataque){
-                        caja.append(`${atacante.nombre} ataca con una potencia de ${atacante.ataque}`);
+                        caja.append(`${atacante.nombre} ataca con una potencia de ${potencia} es un ataque ${efectividad}`);
                     }else{
-                        caja.append(`${atacante.nombre} ataca con una potencia de ${atacante.ataque_especial}`);
+                        caja.append(`${atacante.nombre} ataca con una potencia de ${potencia_especial} es un ataque ${efectividad}`);
                     }
                 },5000);
               
