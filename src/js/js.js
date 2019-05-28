@@ -5,12 +5,21 @@
  */
     $(document).ready(function(){
         let jugadores =(jugador)=>{
-        
+            
+            function limpiarCarta(player){
+                   $(`body > div > div.${player} > div.carta > div > h1`).empty()
+                   $(`body > div > div.${player} > div.carta > div > div:nth-child(1)`).empty()
+                   $(`body > div > div.${player} > div.carta > div > div.ambiente`).empty()
+                   $(`body > div > div.${player} > div.carta > div > div.tipos`).empty();
+                   $(`body > div > div.${player} > div.carta > div > div.stats > ul`).empty();
+            }
             const click=(player)=>{
                 $(`.${player} div.pokeball`).on('click',function(){
+                    limpiarCarta(player)
                     let text = $(`#${player}`).val();
                     let nombre = text.toLowerCase();
                     call_ajax(nombre,pokemons);
+                  
                 });
             }
             
@@ -19,13 +28,11 @@
             const pokemons = (pokemon)=>{ 
 
                 function player (player){
-
                     const carta =  $(`.${player} > .carta > .fondo`);
                     const ambiente = $(`.${player} > .carta > .fondo > .ambiente`);
                     const tipos = $(`.${player} > .carta > .fondo > .tipos`);
-
                     carta.prepend("<h1>"+pokemon.name+"</h1>");
-                    carta.prepend("<div class='vida'><div><p>vida</p></div></div>")
+                    carta.prepend("<div  style='display:inline'><div class='vida'><div><p>vida</p></div></div></div>")
                     ambiente.append("<img src='./images/sprites/"+pokemon.name+".gif' class='sprite'>");
                     
                     pokemon.types.map(function(poke){
@@ -56,7 +63,6 @@
                 }
 
                 localStorage.setItem(`${jugador}`,JSON.stringify(estadisticaPokemon));
-            
                 player(jugador);
                 cambiar_fondo(jugador);
             }

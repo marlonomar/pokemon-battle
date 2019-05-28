@@ -224,12 +224,12 @@ $(document).ready(function(){
                   let ps = (dano /defensor.hp ) * 100 ;
                   let vida = 100 - ps;
             
-                  $(`body > div > div.${player} > div.carta > div > div.vida > div`).css({"width":`${vida}%`});
+                  $(`body > div > div.${player} > div.carta > div > div > div.vida > div`).css({"width":`${vida}%`});
                   if( vida > 20 && vida <= 50){
-                        $(`body > div > div.${player} > div.carta > div > div.vida > div`).css({"background":"yellow"});
+                        $(`body > div > div.${player} > div.carta > div > div > div.vida > div`).css({"background":"yellow"});
                   }
                   if(  vida <= 20){
-                        $(`body > div > div.${player} > div.carta > div > div.vida > div`).css({"background":"red"});
+                        $(`body > div > div.${player} > div.carta > div > div > div.vida > div`).css({"background":"red"});
                   }
                   }
                   const botonAtacar =(player)=>{
