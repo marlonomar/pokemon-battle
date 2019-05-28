@@ -156,7 +156,7 @@ $(document).ready(function(){
                               }
                         }
                   ]                
-            /**--------funciones para el juego------------- */
+                  /**--------funciones para el juego------------- */
                   const efetividadTipos =(ataca,defiende)=>{
 
                         function getType (tipo){
@@ -235,7 +235,7 @@ $(document).ready(function(){
                   const botonAtacar =(player)=>{
                   $(`.${player}  div.carta > div > div.stats`).append("<button class='btn btn-danger' id='atacar'>Atacar</button>")
                   }
-                  /** ----ataque fisico o ataque especial---*/
+                  /** ---- atacar al rival---*/
                   function combate (atacante,defensor,player,tipoAtaque){
                         caja.css({"display":"block"});
                         hp = impacto(defensor,dano);
@@ -254,15 +254,10 @@ $(document).ready(function(){
                               case "inmune":
                                     potencia = 0;
                                     break;
-                        
                               default:
                                     break;
                               }
-                  
-                        if(hp < 0){
-                              hp=0;
-                        }
-                        
+                        if(hp < 0){hp=0;}
                         setTimeout(() => {
                               caja.empty();
                               if(atacante.ataque > atacante.ataque_especial){
@@ -285,7 +280,6 @@ $(document).ready(function(){
                               $(`body > div > div.${player} > div.carta > div > div.stats > ul > li:nth-child(6)`).text(`hp:${hp}`)
                               
                         },15000);
-                        
                         setTimeout(() => {
                               hp
                               if(hp <= 0){
