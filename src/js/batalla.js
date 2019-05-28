@@ -233,7 +233,8 @@ $(document).ready(function(){
                   }
                   }
                   const botonAtacar =(player)=>{
-                  $(`.${player}  div.carta > div > div.stats`).append("<button class='btn btn-danger' id='atacar'>Atacar</button>")
+                  $(` div.${player} > div.carta > div > div.stats > div`).empty()
+                  $(`.${player}  div.carta > div > div.stats`).append("<div><button class='btn btn-danger' id='atacar'>Atacar</button></div>")
                   }
                   /** ---- atacar al rival---*/
                   function combate (atacante,defensor,player,tipoAtaque){
