@@ -34,13 +34,11 @@
                     carta.prepend("<h1>"+pokemon.name+"</h1>");
                     carta.prepend("<div  style='display:inline'><div class='vida'><div><p>vida</p></div></div></div>")
                     ambiente.append("<img src='./images/sprites/"+pokemon.name+".gif' class='sprite'>");
+                    localStorage.setItem('tipo',JSON.stringify(pokemon.types[0].type.name));
                     
                     pokemon.types.map(function(poke){
-                        carta.append("<p class='elementos' style='display:none'>"+poke.type.name+"<p>");
                         tipos.prepend("<img src='./images/tipos/"+poke.type.name+".PNG' class='tipo'>");
-                        $("img.tipo ").eq(0).addClass('tipo_secundario');
-                        $(".elementos").eq(0).hide();
-                        localStorage.setItem('tipo',JSON.stringify(poke.type.name));
+                        
                     });
                     
                     pokemon.stats.map(function(estadistica){
